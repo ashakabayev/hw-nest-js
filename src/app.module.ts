@@ -7,17 +7,18 @@ import { User } from './models/User';
 import { Category } from './models/Category';
 import { QuestionnairiesModule } from './questionnairies/questionnairies.module';
 import { Questionnaire } from './models/Questionnaire';
+import { Question } from 'src/models/Question';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: '217.182.72.53',
-      username: 'miras',
+      username: 'asan',
       password: 'xO5A7IvE',
-      database: 'miras',
-      entities: [User, Category, Questionnaire],
-      synchronize: false,
+      database: 'asanDB',
+      entities: [User, Category, Questionnaire, Question],
+      synchronize: true,
     }),
     UsersModule,
     QuestionnairiesModule,
